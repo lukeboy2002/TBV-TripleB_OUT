@@ -33,12 +33,15 @@
         </nav>
     </section>
 
-    <main class="lg:flex-grow px-2 sm:px-0">
-        <div class="md:grid md:grid-cols-12">
-            <div class="md:col-span-12">
-                {{ $slot }}
+    @if (isset($header))
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                {{ $header }}
             </div>
-        </div>
+        </header>
+    @endif
+    <main>
+        {{ $slot }}
 
         <!-- Sidebar start-->
         <x-theme.mobilemenu />
